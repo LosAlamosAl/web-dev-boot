@@ -1,0 +1,42 @@
+body {
+  padding: 20px;
+  border: 20px solid #bdc3c7;
+  max-width: 700px;
+  width: 80%;
+  margin: 20px auto;
+}
+
+.post {
+  font-family: "Source Sans Pro", sans-serif;
+};
+
+h2 {
+  font-weight: 600;
+}
+
+h2.article {
+  text-transform: capitalize;
+  color: #2c3e50;
+}
+
+p {
+  font-weight: 400;
+}
+
+p.date {
+  color: #3498db;
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+}
+
+p.intro {
+  border-left: 4px solid #f0f0f0;
+  padding-left: 4px;
+}
+
+hr.style-six {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
