@@ -5,7 +5,7 @@ while (num <= 19) {
   num++;
 }
 
-num = 40;
+num = 10;
 console.log("---------");
 while (num <= 40) {
   if (num % 2 == 0) console.log(num);
