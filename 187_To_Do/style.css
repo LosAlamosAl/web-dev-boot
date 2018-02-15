@@ -1,0 +1,26 @@
+body {
+  font-family: 'Nunito', sans-serif;
+}
+
+h1 {
+  font-weight: 800;
+  background-color: pink;
+}
+
+li {
+  font-weight: 600;
+}
+
+div {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.fa-trash-alt {
+  color: white;
+  background-color: red;
+}
+
+.fa-plus {
+  float: right;
+}
