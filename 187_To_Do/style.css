@@ -38,16 +38,10 @@ input[type="text"]:focus {
   border: 4px solid #679bef;
 }
 
-input[type="text"]:hover {
-  outline: none;
-  border: 4px solid #679bef;
-}
-
 input[type="text"]::placeholder {
   color: #dee9fc;
   font-style: italic;
 }
-
 
 ul {
   list-style: none;
@@ -55,11 +49,13 @@ ul {
   margin: 0;
 }
 
+.ltxt {
+  padding: 4px 20px;
+}
+
 li {
-  width: 260px;
   font-weight: 600;
   font-size: 1.3em;
-  padding: 2px 20px;
   color: #45618e;
 }
 
@@ -73,6 +69,7 @@ li:nth-child(odd)  { background-color: #f4f7fc }
 }
 
 i {
+  padding: 4px 0px;
   width: 35px;
   text-align: center;
 }
