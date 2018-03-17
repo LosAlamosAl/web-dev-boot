@@ -5,7 +5,7 @@ body {
   background: linear-gradient(to right, #8f94fb, #4e54c8);
 }
 
-div {
+div#dtodo {
   width: 350px;
   margin-top: 120px;
   margin-left: auto;
@@ -14,7 +14,7 @@ div {
   box-shadow: 0 0 8px rgba(0,0,0, 0.4);
 }
 
-h1 {
+h1#htodo {
   font-weight: 800;
   background-color: #5a7196;
   padding: 2px 20px;
@@ -55,7 +55,7 @@ ul {
   margin: 0;
 }
 
-li {
+li.ltodo {
   height: 40px;
   line-height: 40px;
   font-weight: 600;
@@ -63,10 +63,10 @@ li {
   color: #45618e;
 }
 
-li:nth-child(even) { background-color: white }
-li:nth-child(odd)  { background-color: #f4f7fc }
+li.ltodo:nth-child(even) { background-color: white }
+li.ltodo:nth-child(odd)  { background-color: #f4f7fc }
 
-li span {
+li.ltodo span {
   background: #db1c2f;
   height: 40px;
   margin-right: 20px;
@@ -78,7 +78,7 @@ li span {
   opacity: 0;
 }
 
-li:hover span {
+li.ltodo:hover span {
   width: 40px;
   opacity: 1.0;
 }
@@ -88,3 +88,32 @@ li:hover span {
   text-decoration: line-through;
 }
 
+div#dnote {
+  width: 450px;
+  margin-top: 120px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+  background-color: white;
+  box-shadow: 0 0 8px rgba(0,0,0, 0.4);
+}
+
+h1#hnote {
+  margin: 0;
+  padding: 10px 20px 0 20px;
+  font-weight: 800;
+  color: #5a7196;
+}
+
+li.lnote {
+  height: 40px;
+  line-height: 40px;
+  font-weight: 600;
+  font-size: 1.3em;
+  color: #45618e;
+}
+
+ol {
+  margin: 0;
+  padding-bottom: 10px;
+}

@@ -12,15 +12,24 @@
       crossorigin="anonymous"></script>
 </head>
   <body>
-    <div>
-      <h1>To-Do List<span id="plus"><i class="fa fa-plus"></i></span></h1>
+    <div id="dtodo">
+      <h1 id="htodo">To-Do List<span id="plus"><i class="fa fa-plus"></i></span></h1>
       <input type="text" placeholder="Enter a to-do">
       <ul>
-        <li><span><i class="fa fa-trash"></i></span>Cancel Dillard's</li>
-        <li><span><i class="fa fa-trash"></i></span>Concealed carry</li>
-        <li><span><i class="fa fa-trash"></i></span>Get a job</li>
-        <li><span><i class="fa fa-trash"></i></span>Buy Grey Goose</li>
+        <li class="ltodo"><span><i class="fa fa-trash-alt"></i></span>New Udemy classes</li>
+        <li class="ltodo"><span><i class="fa fa-trash-alt"></i></span>Drink water</li>
+        <li class="ltodo"><span><i class="fa fa-trash-alt"></i></span>Get a job</li>
+        <li class="ltodo"><span><i class="fa fa-trash-alt"></i></span>Buy Grey Goose</li>
       </ul>
+    </div>
+    <div id="dnote">
+      <h1 id="hnote">Additions to Exercise</h1>
+      <ol>
+        <li class="lnote">Vanilla JavaScript. No JQuery.</li>
+        <li class="lnote">Change cursor on hover.</li>
+        <li class="lnote">Highlight plus sign on hover.</li>
+        <li class="lnote">Don't add empty to-do.</li>
+      </ol>
     </div>
 
     <script src="script.js"></script>
