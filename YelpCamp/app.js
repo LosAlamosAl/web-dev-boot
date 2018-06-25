@@ -1,33 +1,56 @@
 var express = require("express");
 var bodyParser = require("body-parser");
+var mongoose = require("mongoose");
 var app = express();
 
-var campgrounds = [
-    {name: "jsjs", image: "https://images.pexels.com/photos/556414/pexels-photo-556414.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"},
-    {name: "jsjs", image: "https://images.pexels.com/photos/556414/pexels-photo-556414.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"},
-    {name: "jsjs", image: "https://images.pexels.com/photos/556414/pexels-photo-556414.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"},
-    {name: "jsjs", image: "https://images.pexels.com/photos/556414/pexels-photo-556414.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"},
-    {name: "jsjs", image: "https://images.pexels.com/photos/556414/pexels-photo-556414.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"},
-    {name: "jsjs", image: "https://images.pexels.com/photos/556414/pexels-photo-556414.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"},
-    {name: "jsjs", image: "https://images.pexels.com/photos/556414/pexels-photo-556414.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"},
-    {name: "jsjs", image: "https://images.pexels.com/photos/556414/pexels-photo-556414.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"},
-    {name: "hshg", image: "https://images.pexels.com/photos/556414/pexels-photo-556414.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"}
-];
-
+mongoose.connect("mongodb://localhost/yelp_camp");
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
+
+var campgroundSchema = new mongoose.Schema({
+    name: String,
+    image: String
+    
+});
+
+var Campground = mongoose.model("Campground", campgroundSchema);
+
+/*
+Campground.create({
+    name: "cg2", 
+    image: "https://images.pexels.com/photos/556414/pexels-photo-556414.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+}, function(err, campground) {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log("NEW CAMPGROUND:");
+        console.log(campground);
+    }
+});
+*/
 
 app.get("/", function(req, res) {
     res.render("landing") ;
 });
 
 app.get("/campgrounds", function(req, res) {
-  res.render("campgrounds", {campgrounds:campgrounds});
+    Campground.find({}, function(err, allCampgrounds) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.render("campgrounds", {campgrounds:allCampgrounds});
+        }
+    });
 });
 
 app.post("/campgrounds", function(req, res) {
-    campgrounds.push({name: req.body.name, image: req.body.image});
-    res.redirect("/campgrounds");
+    Campground.create({name: req.body.name, image: req.body.image}, function(err, newGC) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.redirect("/campgrounds");
+        }
+    });
 });
 
 app.get("/campgrounds/new", function(req, res) {
