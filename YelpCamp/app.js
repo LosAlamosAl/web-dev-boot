@@ -9,16 +9,17 @@ app.set("view engine", "ejs");
 
 var campgroundSchema = new mongoose.Schema({
     name: String,
-    image: String
-    
+    image: String,
+    desc: String
 });
 
 var Campground = mongoose.model("Campground", campgroundSchema);
 
 /*
 Campground.create({
-    name: "cg2", 
-    image: "https://images.pexels.com/photos/556414/pexels-photo-556414.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+    name: "cg5", 
+    image: "https://images.pexels.com/photos/556414/pexels-photo-556414.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+    desc: "Another crappy old campround"
 }, function(err, campground) {
     if (err) {
         console.log(err);
@@ -38,13 +39,13 @@ app.get("/campgrounds", function(req, res) {
         if (err) {
             console.log(err);
         } else {
-            res.render("campgrounds", {campgrounds:allCampgrounds});
+            res.render("index", {campgrounds:allCampgrounds});
         }
     });
 });
 
 app.post("/campgrounds", function(req, res) {
-    Campground.create({name: req.body.name, image: req.body.image}, function(err, newGC) {
+    Campground.create({name: req.body.name, image: req.body.image, desc: req.body.desc}, function(err, newGC) {
         if (err) {
             console.log(err);
         } else {
@@ -55,6 +56,16 @@ app.post("/campgrounds", function(req, res) {
 
 app.get("/campgrounds/new", function(req, res) {
     res.render("new");
+});
+
+app.get("/campgrounds/:id", function(req, res) {
+    Campground.findById(req.params.id, function(err, foundCampground) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.render("show", {campground: foundCampground});
+        }
+    });
 });
 
 app.listen(process.env.PORT, process.env.IP, function() {
