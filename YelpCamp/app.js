@@ -4,7 +4,14 @@ var app = express();
 
 var campgrounds = [
     {name: "jsjs", image: "https://images.pexels.com/photos/556414/pexels-photo-556414.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"},
-    {name: "hshgs", image: "https://images.pexels.com/photos/556414/pexels-photo-556414.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"}
+    {name: "jsjs", image: "https://images.pexels.com/photos/556414/pexels-photo-556414.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"},
+    {name: "jsjs", image: "https://images.pexels.com/photos/556414/pexels-photo-556414.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"},
+    {name: "jsjs", image: "https://images.pexels.com/photos/556414/pexels-photo-556414.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"},
+    {name: "jsjs", image: "https://images.pexels.com/photos/556414/pexels-photo-556414.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"},
+    {name: "jsjs", image: "https://images.pexels.com/photos/556414/pexels-photo-556414.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"},
+    {name: "jsjs", image: "https://images.pexels.com/photos/556414/pexels-photo-556414.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"},
+    {name: "jsjs", image: "https://images.pexels.com/photos/556414/pexels-photo-556414.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"},
+    {name: "hshg", image: "https://images.pexels.com/photos/556414/pexels-photo-556414.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"}
 ];
 
 app.use(bodyParser.urlencoded({extended: true}));
