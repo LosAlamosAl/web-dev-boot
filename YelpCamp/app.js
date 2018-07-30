@@ -3,8 +3,6 @@ var bodyParser = require("body-parser");
 var passport = require("passport");
 var LocalStrategy = require("passport-local");
 var mongoose = require("mongoose");
-var Campground = require("./models/campground");
-var Comment = require("./models/comment");
 var User = require("./models/user");
 var seedDB = require("./seeds");
 var app = express();
@@ -38,8 +36,8 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 
 app.use(indexRoutes);
-app.use(campgroundRoutes);
-app.use(indexRoutes);
+app.use("/campgrounds", campgroundRoutes);
+app.use("/campgrounds/:id/comments", commentRoutes);
 
 app.listen(process.env.PORT, process.env.IP, function() {
     console.log("YelpCamp server running");
