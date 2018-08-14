@@ -2,6 +2,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var passport = require("passport");
 var LocalStrategy = require("passport-local");
+var methodOverride = require("method-override");
 var mongoose = require("mongoose");
 var User = require("./models/user");
 var seedDB = require("./seeds");
@@ -12,6 +13,7 @@ var campgroundRoutes = require("./routes/campgrounds");
 var indexRoutes = require("./routes/index");
 
 mongoose.connect("mongodb://localhost/yelp_camp");
+app.use(methodOverride("_method"));
 // seedDB();
 
 // PASSPORT CONFIG
@@ -22,6 +24,7 @@ app.use(require("express-session") ({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
