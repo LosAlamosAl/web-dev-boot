@@ -12,7 +12,7 @@ var campgroundRoutes = require("./routes/campgrounds");
 var indexRoutes = require("./routes/index");
 
 mongoose.connect("mongodb://localhost/yelp_camp");
-seedDB();
+// seedDB();
 
 // PASSPORT CONFIG
 app.use(require("express-session") ({
