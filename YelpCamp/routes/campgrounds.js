@@ -18,7 +18,7 @@ router.post("/", middleware.isLoggedIn, function(req, res) {
         id: req.user._id,
         username: req.user.username
     };
-    Campground.create({name: req.body.name, image: req.body.image, description: req.body.desc, author: author}, function(err, newGC) {
+    Campground.create({name: req.body.name, image: req.body.image, description: req.body.desc, price: req.body.price, author: author}, function(err, newGC) {
         if (err) {
             console.log(err);
         } else {
